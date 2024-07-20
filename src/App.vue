@@ -1,5 +1,13 @@
 <template>
-  <header>
-    <h1>hello world</h1>
-  </header>
+  <ContactForm></ContactForm>
 </template>
+  <script>
+
+    import ContactForm from "@/components/ContactForm.vue"
+
+    export default {
+      components : {
+        ContactForm,
+      }
+    }
+  </script>
