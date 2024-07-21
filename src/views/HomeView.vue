@@ -32,16 +32,78 @@
         <div class="w20 mz-11">
           <h2>mes creations</h2>
         </div>
+        <!-- v-for="(src, key) in imageSources": This loop iterates over each key-value pair in the imageSources object. During each iteration:
+src is assigned the value (URL) from the imageSources object.
+key is assigned the corresponding key (e.g., cv, dynamic, form). -->
+
+        <!-- "v-for="(src, key) in imageSources": Iterates over each item in the imageSources  -->
+
+        <!-- src is the image URL, and key is the key name (e.g., cv, dynamic, form). -->
+        <!-- :key="key": Provides a unique key for each item in the loop, which helps Vue to optimize rendering. -->
+        <div v-for="(src, key) in imageSources" :key="key" class="image-sizing">
+          <!-- This syntax binds the src attribute of the img element to the src
+          variable from the v-for loop. This means each image will use the
+          corresponding URL from the imageSources object.
+          src is just a variable name used in the loop. You could indeed choose a different name if you wanted to. -->
+          <img
+            :src="src"
+            :alt="`${key} image`"
+            @click="openModal(key)"
+            class="image-size"
+          />
+          <!-- :key attribute in the v-for loop is used to provide a unique identifier for each item in the loop.
+           :alt="${key} image" uses a template string to include the key variable in the alt text, making it unique for each image. -->
+
+          <DynamicModal :isVisible="modals[key]" @close="closeModal(key)">
+            <template v-if="key === 'cv'">
+              <h2>CV Details</h2>
+              <p>Some details about the CV...</p>
+            </template>
+            <template v-else-if="key === 'dynamic'">
+              <h2>Dynamic Content</h2>
+              <p>Some details about dynamic content...</p>
+            </template>
+            <template v-else-if="key === 'form'">
+              <h2>Form Content</h2>
+              <p>Some details about the form...</p>
+            </template>
+          </DynamicModal>
+        </div>
       </section>
     </main>
-    <div id="contact">
-      <!-- <ContactForm></ContactForm> -->
-    </div>
   </body>
-  <!--i tell my children components that they're gon receive props(data and methods).i set my data to false to start with and then bind it to my my component that i had to declare in this template. by doing so, my children components are hidden-->
 </template>
 
-<script></script>
+<script>
+import DynamicModal from "@/components/MyModals.vue";
+export default {
+  components: {
+    DynamicModal,
+  },
+  data() {
+    return {
+      imageSources: {
+        cv: "images/cv.jpg",
+        dynamic: "images/dynamic.jpg",
+        form: "images/form.jpg",
+      },
+      modals: {
+        cv: false,
+        dynamic: false,
+        form: false,
+      },
+    };
+  },
+  methods: {
+    openModal(key) {
+      this.modals[key] = true;
+    },
+    closeModal(key) {
+      this.modals[key] = false;
+    },
+  },
+};
+</script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
@@ -95,6 +157,16 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+/* image sizing */
+.image-sizing {
+  display: inline-block;
+  margin: 10px;
+}
+.image-size {
+  height: 200px;
+  width: 200px;
 }
 .me-2 {
   height: 210px;
