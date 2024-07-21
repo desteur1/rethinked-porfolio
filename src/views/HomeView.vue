@@ -72,13 +72,16 @@ key is assigned the corresponding key (e.g., cv, dynamic, form). -->
       </section>
     </main>
   </body>
+  <ContactForm></ContactForm>
 </template>
 
 <script>
 import DynamicModal from "@/components/MyModals.vue";
+import ContactForm from "@/components/ContactForm.vue";
 export default {
   components: {
     DynamicModal,
+    ContactForm,
   },
   data() {
     return {
