@@ -54,17 +54,20 @@ key is assigned the corresponding key (e.g., cv, dynamic, form). -->
     </main>
   </body>
   <ContactForm></ContactForm>
+  <FooterEdge></FooterEdge>
 </template>
 
 <script>
 import DynamicModal from "@/components/MyModals.vue";
 import ContactForm from "@/components/ContactForm.vue";
 import AboutView from "./AboutView.vue";
+import FooterEdge from "@/components/FooterEdge.vue";
 export default {
   components: {
     DynamicModal,
     ContactForm,
     AboutView,
+    FooterEdge,
   },
   data() {
     return {
