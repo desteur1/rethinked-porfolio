@@ -131,9 +131,13 @@ h2 {
     font-size: 1rem;
     padding-bottom: 10px;
   }
+  .w20 {
+    width: 100%;
+    justify-content: center;
+  }
 
   .w10 {
-    width: 50%;
+    width: 100%;
     font-size: 0.7rem;
     line-height: 25px;
   }
