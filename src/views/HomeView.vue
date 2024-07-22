@@ -16,39 +16,41 @@ key is assigned the corresponding key (e.g., cv, dynamic, form). -->
 
         <!-- src is the image URL, and key is the key name (e.g., cv, dynamic, form). -->
         <!-- :key="key": Provides a unique key for each item in the loop, which helps Vue to optimize rendering. -->
-        <div
-          v-for="(data, key) in imageSources"
-          :key="key"
-          class="image-sizing"
-        >
-          <!-- This syntax binds the src attribute of the img element to the src
+        <div class="image-section">
+          <div
+            v-for="(data, key) in imageSources"
+            :key="key"
+            class="image-sizing"
+          >
+            <!-- This syntax binds the src attribute of the img element to the src
           variable from the v-for loop. This means each image will use the
           corresponding URL from the imageSources object.
           src is just a variable name used in the loop. You could indeed choose a different name if you wanted to. -->
-          <img
-            :src="data.src"
-            :alt="`${key} image`"
-            @click="openModal(key)"
-            class="image-size"
-          />
-          <p class="image-text">{{ data.tag }}</p>
-          <!-- :key attribute in the v-for loop is used to provide a unique identifier for each item in the loop.
+            <img
+              :src="data.src"
+              :alt="`${key} image`"
+              @click="openModal(key)"
+              class="image-size"
+            />
+            <p class="image-text">{{ data.tag }}</p>
+            <!-- :key attribute in the v-for loop is used to provide a unique identifier for each item in the loop.
            :alt="${key} image" uses a template string to include the key variable in the alt text, making it unique for each image. -->
 
-          <DynamicModal :isVisible="modals[key]" @close="closeModal(key)">
-            <template v-if="key === 'cv'">
-              <h2>CV Details</h2>
-              <p>Some details about the CV...</p>
-            </template>
-            <template v-else-if="key === 'dynamic'">
-              <h2>Dynamic Content</h2>
-              <p>Some details about dynamic content...</p>
-            </template>
-            <template v-else-if="key === 'form'">
-              <h2>Form Content</h2>
-              <p>Some details about the form...</p>
-            </template>
-          </DynamicModal>
+            <DynamicModal :isVisible="modals[key]" @close="closeModal(key)">
+              <template v-if="key === 'cv'">
+                <h2>CV Details</h2>
+                <p>Some details about the CV...</p>
+              </template>
+              <template v-else-if="key === 'dynamic'">
+                <h2>Dynamic Content</h2>
+                <p>Some details about dynamic content...</p>
+              </template>
+              <template v-else-if="key === 'form'">
+                <h2>Form Content</h2>
+                <p>Some details about the form...</p>
+              </template>
+            </DynamicModal>
+          </div>
         </div>
       </section>
     </main>
@@ -116,9 +118,12 @@ h2 {
 }
 
 /* image sizing */
+.image-section {
+  width: 60%;
+}
 .image-sizing {
   display: inline-block;
-  margin: 10px;
+  margin: 5px;
 }
 .image-size {
   height: 250px;
@@ -143,6 +148,7 @@ h2 {
 .w20 {
   width: 40%;
   display: flex;
+  align-items: center;
 }
 
 .exper {
@@ -152,6 +158,21 @@ h2 {
 }
 .me {
   color: #fff;
+}
+@media (min-width: 811px) and (max-width: 1195px) {
+  .exper {
+    display: block;
+    text-align: center;
+  }
+  .w20 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+  }
+  .image-section {
+    width: 100%;
+  }
 }
 
 @media (max-width: 810px) {
@@ -164,11 +185,21 @@ h2 {
     height: 200px;
     width: 200px;
   }
+  .image-section {
+    width: 100%;
+    text-align: center;
+  }
 
   .exper {
     flex-direction: column;
     padding: 20px 10px 20px 10px;
     align-items: center;
+  }
+  .w20 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
   }
 }
 </style>

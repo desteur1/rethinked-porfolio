@@ -92,6 +92,7 @@ h2 {
 .w20 {
   width: 40%;
   display: flex;
+  align-items: center;
 }
 .w10 {
   width: 60%;
@@ -105,6 +106,17 @@ h2 {
 .w10 strong {
   color: greenyellow;
   font-size: 2.5rem;
+}
+@media (min-width: 811px) and (max-width: 1195px) {
+  .about-me {
+    flex-direction: column;
+    align-items: center;
+  }
+  .w20 {
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 30px;
+  }
 }
 
 @media (max-width: 810px) {
@@ -137,7 +149,7 @@ h2 {
   }
 
   .w10 {
-    width: 100%;
+    /* width: 100%; */
     font-size: 0.7rem;
     line-height: 25px;
   }

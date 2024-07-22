@@ -2,7 +2,7 @@
   <!--my data in my script return an empty string for each of my inputs and texarea that i use v-model to bind with my input and texarea in my template(meaning what is written in my form is being render in my script data and vice versa). I then give a :class(v-bind) to my label(active, that i style in css), my active is assign to my inputs and textarea, telling them that when ever they receive the active class the placeholder should move -35px on the y axis -->
   <section>
     <div class="container">
-      <form @submit.prevent="sendEmail">
+      <form @submit.prevent="sendEmail" id="contact">
         <div class="big-2">
           <div class="form-group">
             <label for="name" :class="{ active: FormData.name }"
