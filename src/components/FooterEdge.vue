@@ -31,7 +31,7 @@ export default {
   margin-top: 10px;
 }
 .b-nav {
-  width: 97.6%;
+  width: 95%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,8 +55,8 @@ p {
     height: 18px;
   }
   .b-nav {
-    width: 95%;
-    position: unset;
+    width: 95.4%;
+    font-size: 0.5rem;
   }
   nav a {
     padding: 0 5px;

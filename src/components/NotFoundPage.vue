@@ -1,13 +1,12 @@
 <template>
   <div class="not-found">
     <figure>
-      <img src="/images/405.jpeg" alt="404 image" />
+      <img src="/images/404.jpeg" alt="404 image" />
       <figcaption>404</figcaption>
     </figure>
   </div>
 </template>
 <script>
-import FooterEdge from "@/components/FooterEdge.vue";
 export default {
   name: "PageNotFound",
 };
@@ -23,7 +22,7 @@ figure {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #000;
+  background: white;
 }
 figure img {
   width: 40%;

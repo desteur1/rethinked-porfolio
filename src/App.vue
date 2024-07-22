@@ -11,7 +11,22 @@
   <Router-view />
 </template>
 
-<script></script>
+<script>
+import { scrollToTop } from "@/utils/scroll";
+import FooterEdge from "./components/FooterEdge.vue";
+
+export default {
+  name: "App",
+  components: {
+    FooterEdge,
+  },
+  methods: {
+    handleScrollToTop() {
+      scrollToTop();
+    },
+  },
+};
+</script>
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 * {
@@ -21,7 +36,7 @@
 
 .tab {
   position: fixed;
-  width: 99%;
+  width: 98%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -46,10 +61,11 @@
   object-fit: contain;
   cursor: zoom-in;
 }
+
 @media (max-width: 810px) {
   .tab {
     width: 100%;
-    font-size: 1rem;
+    font-size: 0.5rem;
     position: unset;
   }
   .tab a:first-of-type {
