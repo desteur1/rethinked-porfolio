@@ -29,19 +29,28 @@ export default {
 // The closeModal method emits a close event, which the parent component can listen to in order to change the isVisible prop, thus controlling the modal's visibility.
 </script>
 
-<style>
+<style scoped>
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 95%);
   display: flex;
   justify-content: center;
   align-items: center;
 }
+button {
+  background: red;
+  color: white;
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  cursor: pointer;
+}
 .modal-content {
+  position: relative;
   background: white;
   padding: 20px;
   border-radius: 5px;
