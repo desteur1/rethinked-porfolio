@@ -31,7 +31,7 @@ export default {
   margin-top: 10px;
 }
 .b-nav {
-  width: 95%;
+  width: 97.7%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,26 +40,38 @@ export default {
   color: #fff;
   position: fixed;
   bottom: 0;
-  margin-right: 10px;
+  margin: 10px 0 10px 0;
 }
 nav a {
-  padding: 0 30px;
+  padding: 20px 30px;
 }
 p {
   font-size: 20px;
 }
 
-@media (max-width: 810px) {
+@media (min-width: 490px) and (max-width: 810px) {
+  .b-nav {
+    width: 94%;
+  }
+}
+
+@media (max-width: 490px) {
   .itm-10 {
     width: 18px;
     height: 18px;
   }
   .b-nav {
-    width: 95.4%;
+    width: 91%;
     font-size: 0.5rem;
+    margin: 0;
   }
   nav a {
     padding: 0 5px;
+  }
+}
+@media (min-width: 811px) and (max-width: 1300px) {
+  .b-nav {
+    width: 95%;
   }
 }
 </style>

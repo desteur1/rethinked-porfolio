@@ -13,13 +13,10 @@
 
 <script>
 import { scrollToTop } from "@/utils/scroll";
-import FooterEdge from "./components/FooterEdge.vue";
 
 export default {
   name: "App",
-  components: {
-    FooterEdge,
-  },
+
   methods: {
     handleScrollToTop() {
       scrollToTop();
@@ -36,7 +33,7 @@ export default {
 
 .tab {
   position: fixed;
-  width: 98%;
+  width: 98.7%;
   display: flex;
   justify-content: space-around;
   align-items: center;

@@ -208,7 +208,7 @@ label {
     padding-bottom: 7px;
   }
   .butt {
-    margin-bottom: 50px;
+    margin-bottom: 80px;
   }
   .btn-1 {
     font-size: 1rem;

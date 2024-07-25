@@ -38,16 +38,78 @@ key is assigned the corresponding key (e.g., cv, dynamic, form). -->
 
             <DynamicModal :isVisible="modals[key]" @close="closeModal(key)">
               <template v-if="key === 'cv'">
-                <h2>CV Details</h2>
-                <p>Some details about the CV...</p>
+                <div class="container">
+                  <h2>CV EN LIGNE</h2>
+                  <p>
+                    à été créé le
+                    <time datetime="2024-01-21">01 janvier 2024</time>
+                  </p>
+
+                  <div>
+                    <h2>les langages utilisés</h2>
+                    <ul>
+                      <li>html</li>
+                      <li>css</li>
+                    </ul>
+                  </div>
+                  <div class="site-link">
+                    <a href="https://desteur1.github.io/correction-CV/"
+                      >lien vers mon site CV en ligne</a
+                    >
+                    <a href="https://github.com/desteur1/correction-CV"
+                      >mon CV dans mon repository github</a
+                    >
+                  </div>
+                </div>
               </template>
               <template v-else-if="key === 'dynamic'">
-                <h2>Dynamic Content</h2>
-                <p>Some details about dynamic content...</p>
+                <div class="container">
+                  <h2>home space</h2>
+                  <p>
+                    à été créé le
+                    <time datetime="2024-03-20">20 mars 2024</time>
+                  </p>
+                  <div>
+                    <h2>les langages utilisés</h2>
+                    <ul>
+                      <li>html</li>
+                      <li>css</li>
+                    </ul>
+                  </div>
+                  <div class="site-link">
+                    <a href="https://desteur1.github.io/my-home-space/"
+                      >lien vers mon site my home space</a
+                    >
+                    <a href="https://github.com/desteur1/my-home-space"
+                      >my home space sur github</a
+                    >
+                  </div>
+                </div>
               </template>
               <template v-else-if="key === 'form'">
-                <h2>Form Content</h2>
-                <p>Some details about the form...</p>
+                <div class="container">
+                  <h2>formulaire dynamique</h2>
+                  <p>
+                    a été créé le
+                    <time datetime="2024-04-18">18 avril 2024</time>
+                  </p>
+                  <div>
+                    <h2>les langages utilisés</h2>
+                    <ul>
+                      <li>html</li>
+                      <li>css</li>
+                      <li>javascript</li>
+                    </ul>
+                  </div>
+                  <div class="site-link">
+                    <a href=" https://desteur1.github.io/commentaire_dynamique/"
+                      >lien vers mon site commentaire dynamique</a
+                    >
+                    <a href="https://github.com/desteur1/commentaire_dynamique"
+                      >mon commentaire dynamique sur github</a
+                    >
+                  </div>
+                </div>
               </template>
             </DynamicModal>
           </div>
@@ -111,7 +173,7 @@ body {
 
 /*****************MAIN*************/
 
-h2 {
+.w20 h2 {
   font-size: 3rem;
   text-transform: uppercase;
   color: greenyellow;
@@ -159,6 +221,39 @@ h2 {
 .me {
   color: #fff;
 }
+/* CV , homespace and dynamic form styling */
+.container h2 {
+  color: greenyellow;
+  text-align: center;
+  text-transform: uppercase;
+}
+.container p,
+li {
+  text-align: center;
+  padding: 5px;
+}
+ul {
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.site-link {
+  display: flex;
+  flex-direction: column;
+}
+.site-link a {
+  text-decoration: none;
+  padding: 5px;
+  text-transform: capitalize;
+}
+.site-link a:active {
+  color: red;
+}
+.site-link a:hover {
+  color: greenyellow;
+}
+/* homespace styling */
+
 @media (min-width: 811px) and (max-width: 1195px) {
   .exper {
     display: block;
@@ -176,7 +271,7 @@ h2 {
 }
 
 @media (max-width: 810px) {
-  h2 {
+  .w20 h2 {
     font-size: 1rem;
     padding-bottom: 10px;
   }
