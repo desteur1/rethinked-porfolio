@@ -3,19 +3,24 @@
     <RouterLink to="/" @click="handleScrollToTop"
       ><img src="/images/desteur-logo .png" alt="Desteur's logo"
     /></RouterLink>
-    <RouterLink to="/#section2">presentation</RouterLink>
+    <RouterLink to="/#section2">présentation</RouterLink>
     <RouterLink to="/#section1">creations</RouterLink>
     <RouterLink to="/#contact">contact</RouterLink>
   </div>
 
   <Router-view />
+  <FooterEdge></FooterEdge>
 </template>
 
 <script>
+import FooterEdge from "@/components/FooterEdge.vue";
 import { scrollToTop } from "@/utils/scroll";
 
 export default {
   name: "App",
+  components: {
+    FooterEdge,
+  },
 
   methods: {
     handleScrollToTop() {
@@ -40,7 +45,7 @@ export default {
   text-transform: uppercase;
   font-size: 2.5rem;
   background: #000;
-  padding: 20px 0;
+  padding: 10px 0;
   font-family: "Roboto", sans-serif;
 }
 .tab a {
@@ -59,7 +64,7 @@ export default {
   cursor: zoom-in;
 }
 
-@media (max-width: 810px) {
+@media (max-width: 576px) {
   .tab {
     width: 100%;
     font-size: 0.5rem;
@@ -68,6 +73,18 @@ export default {
   .tab a:first-of-type {
     width: 30px;
     height: 30px;
+  }
+}
+@media (min-width: 576px) and (max-width: 950px) {
+  .tab {
+    font-size: 1rem;
+    width: 96%;
+  }
+}
+@media (min-width: 950px) and (max-width: 1100px) {
+  .tab {
+    font-size: 1.7rem;
+    width: 96.5%;
   }
 }
 </style>

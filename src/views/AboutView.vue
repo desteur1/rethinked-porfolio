@@ -8,7 +8,7 @@
 
     <div class="slider-content">
       <h1>desteur piepenche fall</h1>
-      <p>developpeur web et web mobile</p>
+      <p>développeur web et web mobile</p>
     </div>
   </article>
   <section class="about-me d-10" id="section2">
