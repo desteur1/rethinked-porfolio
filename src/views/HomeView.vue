@@ -118,30 +118,28 @@ key is assigned the corresponding key (e.g., cv, dynamic, form). -->
     </main>
   </body>
   <ContactForm></ContactForm>
-  <FooterEdge></FooterEdge>
 </template>
 
 <script>
 import DynamicModal from "@/components/MyModals.vue";
 import ContactForm from "@/components/ContactForm.vue";
 import AboutView from "./AboutView.vue";
-import FooterEdge from "@/components/FooterEdge.vue";
+
 export default {
   components: {
     DynamicModal,
     ContactForm,
     AboutView,
-    FooterEdge,
   },
   data() {
     return {
       imageSources: {
-        cv: { src: "images/cv.jpg", tag: "My CV project (Responsive)" },
+        cv: { src: "images/cv.jpg", tag: "My CV Project (Responsive)" },
         dynamic: {
           src: "images/dynamic.jpg",
           tag: "HomeSpace (Not Responsive)",
         },
-        form: { src: "images/form.jpg", tag: "Form project (Responsive)" },
+        form: { src: "images/form.jpg", tag: "Form Project (Responsive)" },
       },
       modals: {
         cv: false,

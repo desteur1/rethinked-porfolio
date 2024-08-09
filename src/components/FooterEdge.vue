@@ -14,7 +14,7 @@
       /></a>
     </nav>
     <p>
-      <small>mis à jour le<time datetime="2024-05-21"></time> 21-05-2024</small>
+      <small>Mis à Jour Le<time datetime="2024-05-21"></time> 21-05-2024</small>
     </p>
   </div>
 </template>
@@ -47,31 +47,40 @@ nav a {
 }
 p {
   font-size: 20px;
+  margin-right: 20px;
 }
+@media (max-width: 576px) {
+  .b-nav {
+    width: 91% !important;
+    font-size: 0.5rem;
+  }
+  .itm-10 {
+    width: 13px;
+    height: 13px;
+  }
 
-@media (min-width: 490px) and (max-width: 810px) {
+  nav a {
+    padding: 0 5px;
+  }
+  p {
+    font-size: 15px;
+    margin-right: 20px;
+  }
+}
+@media (min-width: 576px) and (max-width: 702px) {
   .b-nav {
     width: 94%;
   }
 }
 
-@media (max-width: 490px) {
-  .itm-10 {
-    width: 18px;
-    height: 18px;
-  }
+@media (min-width: 700px) and (max-width: 1200px) {
   .b-nav {
-    width: 91%;
-    font-size: 0.5rem;
-    margin: 0;
-  }
-  nav a {
-    padding: 0 5px;
+    width: 96%;
   }
 }
-@media (min-width: 811px) and (max-width: 1300px) {
+@media (min-width: 1200px) and (max-width: 1300px) {
   .b-nav {
-    width: 95%;
+    width: 97%;
   }
 }
 </style>

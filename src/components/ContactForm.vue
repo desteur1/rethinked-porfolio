@@ -8,7 +8,13 @@
             <label for="name" :class="{ active: FormData.name }"
               ><font-awesome-icon icon="user" /> Nom</label
             >
-            <input type="text" id="name" v-model="FormData.name" required />
+            <input
+              type="text"
+              id="name"
+              v-model="FormData.name"
+              autocomplete="off"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="surName" :class="{ active: FormData.surname }"
@@ -18,6 +24,7 @@
               type="text"
               id="surName"
               v-model="FormData.surname"
+              autocomplete="off"
               required
             />
           </div>
@@ -27,7 +34,13 @@
           <label for="object" :class="{ active: FormData.object }"
             ><font-awesome-icon :icon="['fas', 'user-pen']" /> Objet</label
           >
-          <input type="text" id="object" v-model="FormData.object" required />
+          <input
+            type="text"
+            id="object"
+            v-model="FormData.object"
+            autocomplete="off"
+            required
+          />
         </div>
         <div class="form-group">
           <label for="message" :class="{ active: FormData.message }"
@@ -38,6 +51,7 @@
             id="message"
             rows="8"
             v-model="FormData.message"
+            autocomplete="off"
             required
           ></textarea>
         </div>
