@@ -51,8 +51,10 @@ p {
 }
 @media (max-width: 576px) {
   .b-nav {
-    width: 91% !important;
+    width: 95% !important;
     font-size: 0.5rem;
+    position: unset;
+    margin: 0;
   }
   .itm-10 {
     width: 13px;
@@ -67,13 +69,13 @@ p {
     margin-right: 20px;
   }
 }
-@media (min-width: 576px) and (max-width: 702px) {
+@media (min-width: 576px) and (max-width: 802px) {
   .b-nav {
     width: 94%;
   }
 }
 
-@media (min-width: 700px) and (max-width: 1200px) {
+@media (min-width: 800px) and (max-width: 1200px) {
   .b-nav {
     width: 96%;
   }
