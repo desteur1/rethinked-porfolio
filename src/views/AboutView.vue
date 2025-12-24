@@ -17,11 +17,12 @@
     </div>
     <div class="w10">
       <p>
-        <strong>Bonjour, je suis Desteur ! </strong><br />J'ai trouvé ma voix en
-        tant que Developpeur web. A ce jour je maîtrise le frontend et je vise
-        full stack pour très bientôt. En tant que personne impliquée, passionnée
-        et rigoureuse, je saurais mettre en forme vos projets francophones comme
-        anglophones. <br />A très vite pour nos futures collaborations.
+        <strong>Bonjour, je suis Desteur !</strong><br />J'ai trouvé ma voie en
+        tant que développeur web. Maîtrisant le frontend, je finalise ma montée
+        en compétences full stack. J’ai déjà travaillé avec Python (Django),
+        Node.js, Express, n8n et Docker, et il ne me reste plus qu’à finaliser
+        PHP / Symfony. Sérieux, passionné et rigoureux, je mets mes compétences
+        au service de projets anglophones comme francophones.
       </p>
     </div>
   </section>

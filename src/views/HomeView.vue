@@ -8,9 +8,6 @@
         <div class="w20 mz-11">
           <h2>mes creations</h2>
         </div>
-        <!-- v-for="(src, key) in imageSources": This loop iterates over each key-value pair in the imageSources object. During each iteration:
-src is assigned the value (URL) from the imageSources object.
-key is assigned the corresponding key (e.g., cv, dynamic, form). -->
 
         <!-- "v-for="(src, key) in imageSources": Iterates over each item in the imageSources  -->
 
@@ -53,10 +50,10 @@ key is assigned the corresponding key (e.g., cv, dynamic, form). -->
                     </ul>
                   </div>
                   <div class="site-link">
-                    <a href="https://desteur1.github.io/correction-CV/"
+                    <a href="https://desteur.alwaysdata.net/"
                       >lien vers mon site CV en ligne</a
                     >
-                    <a href="https://github.com/desteur1/correction-CV"
+                    <a href="https://github.com/desteur1/OPTIMIZE-CV"
                       >mon CV dans mon repository github</a
                     >
                   </div>
@@ -111,6 +108,83 @@ key is assigned the corresponding key (e.g., cv, dynamic, form). -->
                   </div>
                 </div>
               </template>
+              <template v-else-if="key === 'artisan'">
+                <div class="container">
+                  <h2>Trouvez un Artisan</h2>
+                  <p>
+                    a été créé le
+                    <time datetime="2024-01-14">14 janvier 2025</time>
+                  </p>
+                  <div>
+                    <h2>les langages utilisés</h2>
+                    <ul>
+                      <li>html</li>
+                      <li>scss</li>
+                      <li>typescript</li>
+                    </ul>
+                  </div>
+                  <div class="site-link">
+                    <a href=" https://desteurs-artisan-site.netlify.app/"
+                      >lien vers mon site trouve ton artisan</a
+                    >
+                    <a href="https://github.com/desteur1/artisan-app"
+                      >liens du code source sur github</a
+                    >
+                  </div>
+                </div>
+              </template>
+              <template v-else-if="key === 'spacex'">
+                <div class="container">
+                  <h2>SpaceX</h2>
+                  <p>
+                    a été créé le
+                    <time datetime="2025-05-07">7 mai 2025</time>
+                  </p>
+                  <div>
+                    <h2>les langages utilisés</h2>
+                    <ul>
+                      <li>html</li>
+                      <li>css</li>
+                      <li>typescript</li>
+                      <li>vue.js</li>
+                    </ul>
+                  </div>
+                  <div class="site-link">
+                    <a href=" https://space-x-launchess.netlify.app/"
+                      >lien vers mon site SpaceX</a
+                    >
+                    <a href="https://github.com/desteur1/space-x-front-end"
+                      >liens du code source SpaceX sur github</a
+                    >
+                  </div>
+                </div>
+              </template>
+              <template v-else-if="key === 'figurine'">
+                <div class="container">
+                  <h2>Petit Village</h2>
+                  <p>
+                    a été créé le
+                    <time datetime="2025-06-23">23 juin 2025</time>
+                  </p>
+                  <div>
+                    <h2>les langages utilisés</h2>
+                    <ul>
+                      <li>html</li>
+                      <li>css</li>
+                      <li>typescript</li>
+                      <li>javascript</li>
+                    </ul>
+                  </div>
+                  <div class="site-link">
+                    <a href=" https://petit-village.netlify.app/"
+                      >lien vers mon site petit Village</a
+                    >
+                    <a href="https://github.com/desteur1/angular-petit-village"
+                      >liens du code source petit village sur github</a
+                    >
+                  </div>
+                </div>
+              </template>
             </DynamicModal>
           </div>
         </div>
@@ -134,17 +208,23 @@ export default {
   data() {
     return {
       imageSources: {
-        cv: { src: "images/cv.jpg", tag: "My CV Project (Responsive)" },
+        cv: { src: "images/cv.jpg", tag: "Mon CV En Ligne" },
         dynamic: {
           src: "images/dynamic.jpg",
-          tag: "HomeSpace (Not Responsive)",
+          tag: "HomeSpace Project",
         },
-        form: { src: "images/form.jpg", tag: "Form Project (Responsive)" },
+        form: { src: "images/form.jpg", tag: "Commentaire Dynamique" },
+        artisan: { src: "images/artisan.jpg", tag: "Trouvez Un Artisan" },
+        spacex: { src: "images/spacex.jpeg", tag: "SpaceX Project" },
+        figurine: { src: "images/figurine.webp", tag: "Petit Village" },
       },
       modals: {
         cv: false,
         dynamic: false,
         form: false,
+        artisan: false,
+        spacex: false,
+        figurine: false,
       },
     };
   },
@@ -175,6 +255,9 @@ body {
   font-size: 3rem;
   text-transform: uppercase;
   color: greenyellow;
+}
+h2 {
+  margin-top: 20px;
 }
 
 /* image sizing */
@@ -269,9 +352,18 @@ ul {
 }
 
 @media (max-width: 810px) {
+  .container h2 {
+    font-size: 1rem;
+  }
+  .container p {
+    font-size: 0.8rem;
+  }
   .w20 h2 {
     font-size: 1rem;
     padding-bottom: 10px;
+  }
+  ul {
+    font-size: 0.8rem;
   }
 
   .image-size {
@@ -293,6 +385,9 @@ ul {
     display: flex;
     justify-content: center;
     padding-bottom: 30px;
+  }
+  .site-link a {
+    font-size: 0.8rem;
   }
 }
 </style>
