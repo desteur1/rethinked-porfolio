@@ -55,4 +55,9 @@ button {
   padding: 20px;
   border-radius: 5px;
 }
+@media (max-width: 810px) {
+  .modal-content {
+    padding: 10px;
+  }
+}
 </style>

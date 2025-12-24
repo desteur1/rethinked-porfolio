@@ -31,13 +31,13 @@
         </div>
 
         <div class="form-group">
-          <label for="object" :class="{ active: FormData.object }"
+          <label for="object" :class="{ active: FormData.subject }"
             ><font-awesome-icon :icon="['fas', 'user-pen']" /> Objet</label
           >
           <input
             type="text"
             id="object"
-            v-model="FormData.object"
+            v-model="FormData.subject"
             autocomplete="off"
             required
           />
@@ -67,7 +67,8 @@
 </template>
 
 <script>
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
+
 export default {
   name: "ContactForm",
   data() {
@@ -75,7 +76,7 @@ export default {
       FormData: {
         name: "",
         surname: "",
-        object: "",
+        subject: "",
         message: "",
       },
     };
@@ -86,17 +87,14 @@ export default {
     sendEmail() {
       const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const userID = import.meta.env.VITE_EMAILJS_USER_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      // Log the environment variables to verify they are loaded
-      // console.log("Service ID:", serviceID);
-      // console.log("Template ID:", templateID);
-      // console.log("User ID:", userID);
-
-      // if (!userID) {
-      //   console.error("The user ID is required.");
-      //   return;
-      // }
+      // // Log the environment variables to verify they are loaded
+      // console.log({
+      //   serviceID,
+      //   templateID,
+      //   publicKey,
+      // });
 
       emailjs
         .send(
@@ -106,10 +104,10 @@ export default {
             name: this.FormData.name,
             surname: this.FormData.surname,
 
-            object: this.FormData.object,
+            subject: this.FormData.subject,
             message: this.FormData.message,
           },
-          userID
+          publicKey
         )
         .then((response) => {
           console.log("SUCCESS!", response.status, response.text);
@@ -117,7 +115,7 @@ export default {
           // Reset the form
           this.FormData.name = "";
           this.FormData.surname = "";
-          this.FormData.object = "";
+          this.FormData.subject = "";
           this.FormData.message = "";
         })
         .catch((err) => {
