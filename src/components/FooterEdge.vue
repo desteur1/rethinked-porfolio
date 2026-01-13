@@ -14,7 +14,7 @@
       /></a>
     </nav>
     <p>
-      <small>Mis à Jour Le<time datetime="2025-12-23"></time> 23-12-2025</small>
+      <small>Mis à Jour Le<time datetime="2026-01-12"></time> 12-01-2026</small>
     </p>
   </div>
 </template>
